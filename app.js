@@ -25,6 +25,11 @@ app.set('view engine', 'handlebars');
 // URL ROUTES
 // ----------
 
+app.get('/', (req, res) => {
+    res.render('index')
+
+});
+
 // START THE LISTENER
 app.listen(PORT);
 console.log('Server started and it will listen TCP port', PORT);
