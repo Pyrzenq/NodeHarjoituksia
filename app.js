@@ -25,8 +25,29 @@ app.set('view engine', 'handlebars');
 // URL ROUTES
 // ----------
 
+// Route to home page
 app.get('/', (req, res) => {
-    res.render('index')
+
+    let homePageData = {
+        'price': 31.25,
+        'wind': 2,
+        'temperature': 18
+    }
+    res.render('index', homePageData)
+
+});
+
+app.get('/hourly', (req, res) => {
+
+    let hourlyPageDate = { 'tabledata': [
+        {'hour': 13,
+        'price': 31.44},
+        {},
+        {},
+    ]
+    };
+
+    res.render('hourly', hourlyPageDate)
 
 });
 
